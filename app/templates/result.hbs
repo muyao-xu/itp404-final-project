@@ -3,7 +3,9 @@
     {{model.name}}
   </li>
   <li data-test="restaurant-price">
-    {{model.price}}
+    <DisplayPrice
+      @price={{restaurant.price}}
+    />
   </li>
   <li data-test="restaurant-type">
     {{model.type}}

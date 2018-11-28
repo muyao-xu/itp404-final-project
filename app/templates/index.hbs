@@ -3,7 +3,9 @@
     <li data-test="restaurant">
         name: {{restaurant.name}}
         <br/>
-        price: {{restaurant.price}}
+        <DisplayPrice
+          @price={{restaurant.price}}
+        />
         type: {{restaurant.type}}
     </li>
     <AsyncButton
@@ -11,7 +13,7 @@
     name="saveButton"
     @defaultText="Delete"
     @onClick={{action "deleteRestaurant" restaurant}}/>
-    
+
     {{#link-to "edit" restaurant.id}}
       Edit
     {{/link-to}}
