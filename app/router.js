@@ -9,6 +9,8 @@ const Router = EmberRouter.extend({
 Router.map(function() {
   this.route('home');
   this.route('search');
+  this.route('result',{ path: '/restaurant/:id' });
+  this.route('create');
 });
 
 export default Router;

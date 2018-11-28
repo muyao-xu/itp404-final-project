@@ -1,0 +1,12 @@
+<ul>
+  {{#each model as |restaurant|}}
+    <li data-test="restaurant">
+        {{restaurant.index}}
+        {{restaurant.name}}
+        {{restaurant.price}}
+    </li>
+    <button data-test="restaurant-delete" type="button" onclick={{action "deleteRestaurant" restaurant}}>Delete</button>
+  {{/each}}
+</ul>
+
+{{outlet}}
