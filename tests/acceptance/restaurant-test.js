@@ -52,5 +52,26 @@ module('Acceptance | restaurant', function(hooks) {
 
      assert.dom('[data-test="restaurant"]').exists({count : 0});
      assert.equal(currentURL(), '/');
+  });
+
+  test('editing a restaurant', async function(assert) {
+    server.create('restaurant', {
+          id: 1,
+          name: 'Cava',
+          price: '30',
+          type: 'salad'
+    });
+
+    await visit('/edit/1');
+    await fillIn('#name', 'Starbucks');
+    await fillIn('#price', '1');
+    await fillIn('#type', 'Coffee');
+    await click('[data-test="restaurant-edit-submit"]');
+
+    assert.equal(currentURL(), '/');
+    assert.dom('[data-test="restaurant"]').exists({count : 1});
+    assert.equal(server.db.restaurants[0].name, 'Starbucks');
+    assert.equal(server.db.restaurants[0].price, '1');
+    assert.equal(server.db.restaurants[0].type, 'Coffee');
   })
 });
