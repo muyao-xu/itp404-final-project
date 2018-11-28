@@ -7,9 +7,10 @@
         type: {{restaurant.type}}
     </li>
     <button data-test="restaurant-delete" type="button" onclick={{action "deleteRestaurant" restaurant}}>Delete</button>
-    <button data-test="restaurant-edit" type="button" onclick={{action "editRestaurantPage"}}>
+    {{#link-to "edit" restaurant.id}}
       Edit
-    </button>
+    {{/link-to}}
+
   {{/each}}
 </ul>
 

@@ -6,9 +6,6 @@ export default Controller.extend({
       console.log('delete');
       restaurant.destroyRecord();
       this.transitionToRoute('index');
-    },
-    editRestaurantPage() {
-      this.transitionToRoute('edit');
     }
   }
 });
