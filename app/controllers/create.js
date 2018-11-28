@@ -11,10 +11,25 @@ export default Controller.extend({
         type: this.type
       });
 
-      // let email = this.model;
-      restaurant.save().then(() => {
-        this.transitionToRoute('/');
-      });
+      if (this.name === undefined || this.price === undefined || this.type === undefined) {
+        if (this.name === undefined) {
+          this.set('nameErr', 'cannot be empty');
+        }
+        if (this.price === undefined) {
+          console.log('problem');
+          this.set('priceErr', 'cannot be empty');
+        }
+        if (this.type === undefined) {
+          this.set('typeErr', 'cannot be empty');
+        }
+      }
+      else {
+        // let email = this.model;
+        restaurant.save().then(() => {
+          this.transitionToRoute('/');
+        });
+      }
+
     }
   }
 });

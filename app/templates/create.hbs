@@ -1,14 +1,14 @@
 <form onsubmit={{action "createRestaurant"}}>
   <div>
-    <label for="name">Name</label>
+    <label for="name">Name {{nameErr}}</label>
     {{input type="text" id="name" value=name}}
   </div>
   <div>
-    <label for="price">price</label>
+    <label for="price">price {{priceErr}}</label>
     {{input type="text" id="price" value=price}}
   </div>
   <div>
-    <label for="type">Type</label>
+    <label for="type">Type {{typeErr}}</label>
     {{input type="text" id="type" value=type}}
   </div>
 
