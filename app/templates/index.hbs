@@ -1,9 +1,10 @@
 <ul>
   {{#each model as |restaurant|}}
     <li data-test="restaurant">
-        {{restaurant.index}}
-        {{restaurant.name}}
-        {{restaurant.price}}
+        name: {{restaurant.name}}
+        <br/>
+        price: {{restaurant.price}}
+        type: {{restaurant.type}}
     </li>
     <button data-test="restaurant-delete" type="button" onclick={{action "deleteRestaurant" restaurant}}>Delete</button>
     <button data-test="restaurant-edit" type="button" onclick={{action "editRestaurantPage"}}>

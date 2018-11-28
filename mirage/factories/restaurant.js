@@ -12,7 +12,7 @@ export default Factory.extend({
    return faker.commerce.price();
 },
 
-  type() {
-    return faker.address.country();
+  type(i) {
+    return faker.list.cycle('Salad', 'Burger', 'Ramen', 'Sandwich', 'American', 'Boba', 'Dessert')(i);
   }
 });
