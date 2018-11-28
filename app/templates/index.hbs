@@ -6,7 +6,12 @@
         price: {{restaurant.price}}
         type: {{restaurant.type}}
     </li>
-    <button data-test="restaurant-delete" type="button" onclick={{action "deleteRestaurant" restaurant}}>Delete</button>
+    <AsyncButton
+    data-test="restaurant-delete"
+    name="saveButton"
+    @defaultText="Delete"
+    @onClick={{action "deleteRestaurant" restaurant}}/>
+    
     {{#link-to "edit" restaurant.id}}
       Edit
     {{/link-to}}

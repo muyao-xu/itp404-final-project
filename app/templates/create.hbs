@@ -12,5 +12,9 @@
     {{input type="text" id="type" value=type}}
   </div>
 
-  <button type="submit" data-test="restaurant-submit" >Save</button>
+  <AsyncButton
+  name="saveButton"
+  data-test="restaurant-submit"
+  @defaultText="Save"
+  @onClick={{action "createRestaurant"}}/>
 </form>

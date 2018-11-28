@@ -2,9 +2,7 @@ import Controller from '@ember/controller';
 
 export default Controller.extend({
   actions: {
-    createRestaurant(event) {
-      event.preventDefault();
-
+    createRestaurant() {
       let restaurant = this.store.createRecord('restaurant', {
         name: this.name,
         price: this.price,
@@ -16,7 +14,6 @@ export default Controller.extend({
           this.set('nameErr', 'cannot be empty');
         }
         if (this.price === undefined) {
-          console.log('problem');
           this.set('priceErr', 'cannot be empty');
         }
         if (this.type === undefined) {
