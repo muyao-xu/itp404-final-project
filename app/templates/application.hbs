@@ -1,16 +1,24 @@
-<nav>
-  {{#link-to "home"}}
-    Home
-  {{/link-to}}
-  {{#link-to "search"}}
-    Search
-  {{/link-to}}
-  {{#link-to "index"}}
-    List
-  {{/link-to}}
-  {{#link-to "create"}}
-    Add
-  {{/link-to}}
-</nav>
+{{#bs-nav type="pills" as |nav|}}
+  {{#nav.item}}
+    {{#nav.link-to "home"}}
+      Home
+    {{/nav.link-to}}
+  {{/nav.item}}
+  {{#nav.item}}
+    {{#nav.link-to "search"}}
+      Search
+    {{/nav.link-to}}
+  {{/nav.item}}
+  {{#nav.item}}
+    {{#nav.link-to "index"}}
+      List
+    {{/nav.link-to}}
+  {{/nav.item}}
+  {{#nav.item}}
+    {{#nav.link-to "create"}}
+      Create
+    {{/nav.link-to}}
+  {{/nav.item}}
+{{/bs-nav}}
 
 {{outlet}}

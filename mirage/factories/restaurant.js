@@ -8,11 +8,13 @@ export default Factory.extend({
     return faker.company.companyName();
   },
 
-  price() {
-   return faker.commerce.price();
-},
+  price(i) {
+   return faker.list.random(1,2,3)(i);
+ },
 
   type(i) {
     return faker.list.cycle('Salad', 'Burger', 'Ramen', 'Sandwich', 'American', 'Boba', 'Dessert')(i);
   }
+
+
 });
