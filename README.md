@@ -1,3 +1,4 @@
+https://travis-ci.org/muyao-xu/itp404-final-project.svg?branch=master
 ## LuckyRestaurant
 This application helps the user to find a place to eat randomly. The user can choose their preferences and the program will filter the restaurants in the database to find suitable ones.
 
