@@ -3,6 +3,7 @@ import { setupRenderingTest } from 'ember-qunit';
 import { render } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
 
+// TODO：
 module('Integration | Component | async-button', function(hooks) {
   setupRenderingTest(hooks);
 
@@ -23,4 +24,5 @@ module('Integration | Component | async-button', function(hooks) {
 
     assert.equal(this.element.textContent.trim(), 'template block text');
   });
+
 });
