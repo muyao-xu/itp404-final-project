@@ -6,6 +6,9 @@
         {{restaurant.price}}
     </li>
     <button data-test="restaurant-delete" type="button" onclick={{action "deleteRestaurant" restaurant}}>Delete</button>
+    <button data-test="restaurant-edit" type="button" onclick={{action "editRestaurantPage"}}>
+      Edit
+    </button>
   {{/each}}
 </ul>
 

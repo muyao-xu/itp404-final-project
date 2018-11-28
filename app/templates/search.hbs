@@ -23,7 +23,8 @@
 </div>
 
 <AsyncButton
+name="saveButton"
 @defaultText="Save"
-@pendingText="Saving..."/>
-
+@pendingText="Saving..."
+@onClick={{action "search"}}/>
 </form>

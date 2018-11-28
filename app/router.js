@@ -11,6 +11,7 @@ Router.map(function() {
   this.route('search');
   this.route('result',{ path: '/restaurant/:id' });
   this.route('create');
+  this.route('edit');
 });
 
 export default Router;
