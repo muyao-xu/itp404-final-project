@@ -1,4 +1,11 @@
-https://travis-ci.org/muyao-xu/itp404-final-project.svg?branch=master
+[![Build Status](https://travis-ci.org/muyao-xu/itp404-final-project.svg?branch=master)](https://travis-ci.org/muyao-xu/itp404-final-project)
+
+TODO:
+- add 5 rendering tests
+- update readme
+- maybe, add a 'not interested' property to the restaurant model
+- use bootstrap
+
 ## LuckyRestaurant
 This application helps the user to find a place to eat randomly. The user can choose their preferences and the program will filter the restaurants in the database to find suitable ones.
 
