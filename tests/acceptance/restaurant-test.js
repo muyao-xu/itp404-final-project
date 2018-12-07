@@ -1,5 +1,5 @@
 import { module, test } from 'qunit';
-import { visit, currentURL, fillIn, click } from '@ember/test-helpers';
+import { visit, currentURL, fillIn, click, pauseTest } from '@ember/test-helpers';
 import { setupApplicationTest } from 'ember-qunit';
 import setupMirage from 'ember-cli-mirage/test-support/setup-mirage';
 
@@ -30,20 +30,22 @@ module('Acceptance | restaurant', function(hooks) {
         assert.dom('[data-test="restaurant-type"]').hasText('salad');
   });
 
-  // test('creating an email', async function(assert) {
-  //   await visit('/create');
-  //
-  //   await fillIn('#name', 'Cava');
-  //   await fillIn('#price', '30');
-  //   await fillIn('#type', 'salad');
-  //   await click('[data-test="restaurant-submit"]');
-  //
-  //   assert.equal(currentURL(), '/');
-  //   assert.dom('[data-test="restaurant"]').exists({count : 1});
-  //   assert.equal(server.db.restaurants[0].name, 'Cava');
-  //   assert.equal(server.db.restaurants[0].price, '30');
-  //   assert.equal(server.db.restaurants[0].type, 'salad');
-  // });
+  test('creating an email', async function(assert) {
+    await visit('/create');
+    //
+    await fillIn('#name', 'Cava');
+    await fillIn('#price', '3');
+    await fillIn('#type', 'salad');
+    await click('[data-test="restaurant-create"]');
+
+
+    // await pauseTest();
+    assert.equal(currentURL(), '/');
+    assert.dom('[data-test="restaurant"]').exists({count : 1});
+    assert.equal(server.db.restaurants[0].name, 'Cava');
+    assert.equal(server.db.restaurants[0].price, '3');
+    assert.equal(server.db.restaurants[0].type, 'salad');
+  });
 
   test('deleting a single restaurant', async function(assert) {
     server.createList('restaurant', 1);
