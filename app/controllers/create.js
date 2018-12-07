@@ -37,7 +37,9 @@ export default Controller.extend({
           type: this.type
         });
         restaurant.save().then(() => {
-          this.transitionToRoute('/');
+          this.transitionToRoute('/').then(() => {
+
+          });
         });
         return new Promise((resolve) => {
           resolve();
