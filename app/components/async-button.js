@@ -18,5 +18,7 @@ export default Component.extend({
     var pendingText = this.defaultText + '...';
     this.set('buttonText', pendingText);
     this.onClick();
+      // this.set('buttonText', this.defaultText);
+      // this.set('isPending', false);
   }
 });

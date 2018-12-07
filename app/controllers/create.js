@@ -4,9 +4,8 @@ export default Controller.extend({
   actions: {
     createRestaurant() {
       if (this.name === undefined || this.price === undefined || this.type === undefined) {
-        if (this.name === undefined) {
+        if (this.name === undefined || this.name.length === 0) {
           this.set('nameErr', 'cannot be empty  ');
-          this.set('isEmpty', true);
         }
         if (this.price === undefined) {
           this.set('priceErr', 'cannot be empty  ');
@@ -14,7 +13,9 @@ export default Controller.extend({
         if (this.type === undefined) {
           this.set('typeErr', 'cannot be empty  ');
         }
-        return false;
+        return new Promise((resolve, reject) => {
+          reject();
+        });
       }
       else {
         let restaurant = this.store.createRecord('restaurant', {
