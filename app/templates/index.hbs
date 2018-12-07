@@ -1,12 +1,7 @@
 <ul>
   {{#each model as |restaurant|}}
-    <li data-test="restaurant">
-      name: {{restaurant.name}}
-      <br>
-      <DisplayPrice
-        @price={{restaurant.price}}
-      />
-      type: {{restaurant.type}}
+    <li>
+      <DisplayRestaurant @restaurant = {{restaurant}} data-test="restaurant" />
     </li>
     <AsyncButton
       data-test="restaurant-delete"

@@ -6,6 +6,7 @@ export default Controller.extend({
       if (this.name === undefined || this.price === undefined || this.type === undefined) {
         if (this.name === undefined) {
           this.set('nameErr', 'cannot be empty  ');
+          this.set('isEmpty', true);
         }
         if (this.price === undefined) {
           this.set('priceErr', 'cannot be empty  ');
