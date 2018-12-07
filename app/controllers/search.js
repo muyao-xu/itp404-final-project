@@ -2,8 +2,7 @@ import Controller from '@ember/controller';
 
 export default Controller.extend({
   actions: {
-    search(event) {
-      console.log(this.saveButton);
+    search() {
       var id = Math.random() * 10;
       this.transitionToRoute('result', parseInt(id));
     }

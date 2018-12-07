@@ -16,7 +16,6 @@ export default Controller.extend({
         return false;
       }
       else {
-        console.log('what');
         let restaurant = this.store.createRecord('restaurant', {
           name: this.name,
           price: this.price,

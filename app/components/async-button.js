@@ -14,7 +14,6 @@ export default Component.extend({
 
   click(event) {
     event.preventDefault();
-    console.log('clicked');
     this.set('isPending', true);
     var pendingText = this.defaultText + '...';
     this.set('buttonText', pendingText);

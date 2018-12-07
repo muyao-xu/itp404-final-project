@@ -1,29 +1,29 @@
 <form>
+  <div class="priceErr">
+    Please choose one price level
+  </div>
+  <div class="btn-group">
+    <input type="radio" name="price" value="price1"> $<br>
+    <input type="radio" name="price" value="price2"> $$<br>
+    <input type="radio" name="price" value="price3"> $$$<br>
+  </div>
+  <div>
+    <select>
+      <option name = "foodType" value="Italian">Italian</option>
+      <option name = "foodType" value="Salad">Salad</option>
+      <option name = "foodType" selected = "selected"value="Burgers">Burgers</option>
+      <option name = "foodType" value="Ramen">Ramen</option>
+    </select>
 
-<div class="priceErr">
-  Please choose one price level
-</div>
-<div class="btn-group">
-  <input type="radio" name="price" value="price1"> $<br>
-  <input type="radio" name="price" value="price2"> $$<br>
-  <input type="radio" name="price" value="price3"> $$$<br>
-</div>
-<div>
-  <select>
-  <option name = "foodType" value="Italian">Italian</option>
-  <option name = "foodType" value="Salad">Salad</option>
-  <option name = "foodType" selected = "selected"value="Burgers">Burgers</option>
-  <option name = "foodType" value="Ramen">Ramen</option>
-</select>
+  </div>
+  <div>
+    <label>Open Now</label>
+    {{input id="openNow" name="openNow" type="checkbox" }}
+  </div>
 
-</div>
-<div>
-  <label>Open Now</label>
-  {{input id="openNow" name="openNow" type="checkbox" }}
-</div>
-
-<AsyncButton
-name="saveButton"
-@defaultText="Search"
-@onClick={{action "search"}}/>
+  <AsyncButton
+    name="saveButton"
+    @defaultText="Search"
+    @onClick={{action "search"}}
+  />
 </form>
