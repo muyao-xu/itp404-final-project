@@ -5,6 +5,9 @@ export default Controller.extend({
     deleteRestaurant(restaurant) {
       restaurant.destroyRecord();
       this.transitionToRoute('index');
+      return new Promise((resolve) => {
+        resolve();
+      })
     }
   }
 });
